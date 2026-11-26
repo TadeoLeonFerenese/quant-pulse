@@ -1,0 +1,16 @@
+change: macro-arbitrage-core
+artifact_store: hybrid
+execution_mode: interactive
+strict_tdd: true
+phases:
+  explore: done
+  proposal: done
+decisions:
+  include_dolarapi_adapter: true
+  zscore_alert_mode: two-sided (|Z| > 2.0 -> PREMIUM_ANOMALY / DISCOUNT_ANOMALY)
+  spec: done
+  design: done
+  tasks: done
+  apply: done
+  verify: done
+  archive: done
