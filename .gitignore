@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+coverage/
+
+# Env & secrets
+.env
+.env.*
+!.env.example
+
+# Android / Capacitor
+android/app/build/
+android/.gradle/
+*.keystore
+*.jks
+
+# Local agent infra
+.atl/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
