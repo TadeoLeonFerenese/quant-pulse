@@ -1,0 +1,17 @@
+change: crypto-regime-core
+artifact_store: hybrid
+execution_mode: interactive
+strict_tdd: true
+phases:
+  explore: done
+  proposal: done
+decisions:
+  default_watchlist: [BTC, ETH, SOL, ADA, BNB, XRP, LINK] (extensible)
+  downside_risk_for_rr: max(parametricVaR95, historicalVaR95)
+  include_binance_public_adapter: true (no API keys)
+  spec: done
+  design: done
+  tasks: done
+  apply: done
+  verify: done
+  archive: done
