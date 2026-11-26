@@ -1,0 +1,17 @@
+change: data-integrity-core
+artifact_store: hybrid
+execution_mode: interactive
+strict_tdd: true
+phases:
+  explore: done
+  proposal: done
+decisions:
+  stale_blocks_recommendations: true
+  payload_validation: zod@^4.6.7
+  cache_adapter: indexeddb (behind SnapshotCachePort)
+  spec: done
+  design: done
+  tasks: done
+  apply: done
+  verify: done
+  archive: done
