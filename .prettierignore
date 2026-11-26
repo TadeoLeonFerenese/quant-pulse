@@ -1,0 +1,6 @@
+openspec/
+.atl/
+dist/
+coverage/
+package-lock.json
+AGENT.md

@@ -1,0 +1,52 @@
+# openspec/config.yaml
+schema: spec-driven
+
+context: |
+  Tech stack: React 19 + TypeScript strict + Vite, Android APK via Capacitor (decided 2026-11-26), Tailwind, Zustand, Lucide
+  Architecture: client-only analytics (no custody/orders); pure TS quant engine in src/domain/math; Atomic Design UI; container/presentational split
+  Data integrity: fail-closed (outliers >4 sigma or disconnect -> block recommendations), 3s timeout, stale >10min
+  Testing: Vitest 5.1 + React Testing Library + v8 coverage (100% on src/domain/math/**)
+  Style: mobile-first, 4px/8px scale, h-9/h-10 controls, no emoji+Lucide duplication
+  Validation: NEVER npm run build; only npx tsc --noEmit, npx vitest run, npm run lint
+
+strict_tdd: true
+
+testing:
+  strict_tdd: true
+  detected: 2026-11-26
+  runner: npx vitest run
+  framework: Vitest 5.1
+  layers:
+    unit: true # vitest
+    integration: true # @testing-library/react + jsdom
+    e2e: false
+  coverage: npm run test:coverage # v8, 100% on src/domain/math/**
+  linter: npm run lint # eslint 10 strictTypeChecked --max-warnings 0
+  type_checker: npm run typecheck # tsc --noEmit + tsconfig.node.json
+  formatter: npm run format:check # prettier
+
+rules:
+  proposal:
+    - Include rollback plan for risky changes
+    - Identify affected modules/packages
+  specs:
+    - Use Given/When/Then format for scenarios
+    - Use RFC 2119 keywords (MUST, SHALL, SHOULD, MAY)
+  design:
+    - Include sequence diagrams for complex flows
+    - Document architecture decisions with rationale
+  tasks:
+    - Group tasks by phase (infrastructure, implementation, testing)
+    - Use hierarchical numbering (1.1, 1.2, etc.)
+    - Keep tasks small enough to complete in one session
+  apply:
+    - Follow existing code patterns and conventions
+    - Load relevant coding skills for the project stack
+    - Never run npm run build
+  verify:
+    - Run tests if test infrastructure exists
+    - Compare implementation against every spec scenario
+    - test_command: npx vitest run
+    - typecheck_command: npx tsc --noEmit
+  archive:
+    - Warn before merging destructive deltas (large removals)

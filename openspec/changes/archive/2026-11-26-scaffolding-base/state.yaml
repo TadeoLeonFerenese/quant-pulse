@@ -1,0 +1,18 @@
+change: scaffolding-base
+artifact_store: hybrid
+execution_mode: interactive
+phases:
+  explore: done
+  proposal: done
+  spec: done
+  design: done
+  tasks: done
+  apply: done
+  verify: done
+  archive: done
+decisions:
+  mobile_packaging: capacitor
+  android_build: cloud (GitHub Actions) — no local emulator/JDK21/ANDROID_HOME; next change android-ci-build
+  linter: eslint + typescript-eslint strictTypeChecked
+  typescript: pinned ~6.0.3 (typescript-eslint peer <6.1.0; TS 7 native has no API)
+  ts_extra_flags: noUncheckedIndexedAccess, exactOptionalPropertyTypes

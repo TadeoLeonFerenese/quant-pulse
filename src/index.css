@@ -1,0 +1,14 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-status-success: #059669;
+  --color-status-danger: #e11d48;
+  --color-status-stale: #eab308;
+}
+
+html,
+body,
+#root {
+  height: 100dvh;
+  overflow: hidden;
+}
